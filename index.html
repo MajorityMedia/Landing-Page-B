@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Writer's Forge - Building Writers, Not Just Scripts</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        .hero {
+            text-align: center;
+            padding: 40px 0 60px;
+            color: #fff;
+        }
+        
+        .quote {
+            font-size: 28px;
+            font-style: italic;
+            color: #ccc;
+            margin-bottom: 20px;
+            line-height: 1.3;
+        }
+        
+        .proof {
+            font-size: 48px;
+            font-weight: 900;
+            color: #ff6b35;
+            margin: 30px 0;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            line-height: 1.2;
+        }
+        
+        .tagline {
+            font-size: 24px;
+            color: #fff;
+            margin: 20px 0;
+            line-height: 1.4;
+        }
+        
+        .main-content {
+            background: #fff;
+            padding: 60px 40px;
+            border-radius: 12px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+            margin-bottom: 40px;
+        }
+        
+        .opening {
+            font-size: 20px;
+            line-height: 1.6;
+            margin-bottom: 30px;
+            color: #1a1a1a;
+        }
+        
+        .opening strong {
+            color: #ff6b35;
+            font-weight: 700;
+        }
+        
+        .section {
+            margin-bottom: 50px;
+        }
+        
+        .section p {
+            margin-bottom: 20px;
+            font-size: 16px;
+            line-height: 1.8;
+        }
+        
+        .story-box {
+            background: linear-gradient(135deg, #2d2d2d, #1a1a1a);
+            color: #fff;
+            padding: 35px;
+            border-radius: 8px;
+            margin: 40px 0;
+            border-left: 5px solid #ff6b35;
+        }
+        
+        .story-box h3 {
+            font-size: 22px;
+            margin-bottom: 20px;
+            color: #ff6b35;
+            font-weight: 700;
+        }
+        
+        .story-box p {
+            font-size: 16px;
+            line-height: 1.8;
+            color: #e0e0e0;
+            margin-bottom: 15px;
+        }
+        
+        .story-box p:last-child {
+            margin-bottom: 0;
+        }
+        
+        .story-box em {
+            color: #ff6b35;
+            font-style: italic;
+        }
+        
+        .mentor-reveal {
+            background: #fff3e0;
+            padding: 30px;
+            border-left: 4px solid #ff6b35;
+            margin: 30px 0;
+            font-size: 17px;
+            line-height: 1.8;
+        }
+        
+        .mentor-reveal strong {
+            color: #ff6b35;
+            font-weight: 700;
+        }
+        
+        .credentials {
+            text-align: center;
+            padding: 25px;
+            background: #f8f8f8;
+            border-radius: 8px;
+            margin: 30px 0;
+        }
+        
+        .credentials h3 {
+            font-size: 24px;
+            margin-bottom: 15px;
+            font-weight: 700;
+            color: #1a1a1a;
+        }
+        
+        .credentials p {
+            font-size: 15px;
+            line-height: 1.7;
+            color: #555;
+        }
+        
+        .credentials .numbers {
+            font-size: 18px;
+            font-weight: 700;
+            color: #ff6b35;
+            margin-top: 15px;
+        }
+        
+        .divider {
+            text-align: center;
+            margin: 50px 0;
+            color: #999;
+            font-size: 24px;
+        }
+        
+        .what-you-get {
+            background: #f8f8f8;
+            padding: 40px 35px;
+            border-radius: 8px;
+            margin: 40px 0;
+        }
+        
+        .what-you-get h2 {
+            font-size: 32px;
+            font-weight: 700;
+            color: #1a1a1a;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+        
+        .what-you-get .subtitle {
+            text-align: center;
+            font-size: 17px;
+            color: #666;
+            margin-bottom: 35px;
+            font-style: italic;
+        }
+        
+        .benefit-item {
+            margin: 25px 0;
+            padding: 25px;
+            background: #fff;
+            border-radius: 6px;
+            border-left: 4px solid #ff6b35;
+        }
+        
+        .benefit-item h3 {
+            font-size: 19px;
+            font-weight: 700;
+            color: #ff6b35;
+            margin-bottom: 12px;
+        }
+        
+        .benefit-item p {
+            font-size: 15px;
+            color: #555;
+            line-height: 1.7;
+            margin: 0;
+        }
+        
+        .testimonials {
+            margin: 50px 0;
+        }
+        
+        .testimonials h2 {
+            font-size: 32px;
+            font-weight: 700;
+            color: #1a1a1a;
+            margin-bottom: 35px;
+            text-align: center;
+        }
+        
+        .testimonial {
+            background: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            margin-bottom: 25px;
+            border-left: 4px solid #ff6b35;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+        
+        .testimonial-text {
+            font-size: 16px;
+            line-height: 1.7;
+            color: #333;
+            margin-bottom: 15px;
+            font-style: italic;
+        }
+        
+        .testimonial-author {
+            font-size: 14px;
+            font-weight: 600;
+            color: #ff6b35;
+        }
+        
+        .testimonial-context {
+            font-size: 13px;
+            color: #666;
+            margin-top: 5px;
+        }
+        
+        .email-signup {
+            background: linear-gradient(135deg, #1a1a1a, #2d2d2d);
+            color: #fff;
+            padding: 50px 40px;
+            border-radius: 12px;
+            text-align: center;
+            margin: 30px 0;
+        }
+        
+        .email-signup h2 {
+            font-size: 36px;
+            margin-bottom: 20px;
+            color: #ff6b35;
+            font-weight: 900;
+        }
+        
+        .email-signup .subheading {
+            font-size: 20px;
+            margin-bottom: 15px;
+            color: #fff;
+            font-weight: 600;
+        }
+        
+        .email-signup p {
+            font-size: 17px;
+            margin-bottom: 30px;
+            color: #ccc;
+            line-height: 1.7;
+        }
+        
+        .email-form {
+            max-width: 450px;
+            margin: 0 auto;
+        }
+        
+        .email-form input[type="email"] {
+            width: 100%;
+            padding: 18px;
+            font-size: 16px;
+            border: 2px solid #ff6b35;
+            border-radius: 6px;
+            margin-bottom: 20px;
+            background: #fff;
+            color: #333;
+        }
+        
+        .email-form input[type="email"]:focus {
+            outline: none;
+            border-color: #ff8c42;
+            box-shadow: 0 0 0 3px rgba(255, 107, 53, 0.2);
+        }
+        
+        .cta-button {
+            width: 100%;
+            padding: 20px;
+            font-size: 20px;
+            font-weight: 700;
+            background: linear-gradient(135deg, #ff6b35, #ff8c42);
+            color: #fff;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.2s;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(255, 107, 53, 0.4);
+        }
+        
+        .guarantee {
+            margin-top: 30px;
+            font-size: 15px;
+            color: #ccc;
+            line-height: 1.7;
+        }
+        
+        .alt-link {
+            margin-top: 30px;
+            padding-top: 30px;
+            border-top: 1px solid #444;
+        }
+        
+        .alt-link p {
+            font-size: 16px;
+            margin-bottom: 15px;
+        }
+        
+        .alt-link a {
+            display: inline-block;
+            padding: 12px 28px;
+            background: transparent;
+            border: 2px solid #ff6b35;
+            color: #ff6b35;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: 600;
+            transition: all 0.2s;
+        }
+        
+        .alt-link a:hover {
+            background: #ff6b35;
+            color: #fff;
+        }
+        
+        .highlight-box {
+            background: #ff6b35;
+            color: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            margin: 40px 0;
+            text-align: center;
+        }
+        
+        .highlight-box p {
+            font-size: 19px;
+            line-height: 1.6;
+            margin: 0;
+            font-weight: 600;
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                padding: 10px;
+            }
+            
+            .main-content {
+                padding: 40px 20px;
+            }
+            
+            .quote {
+                font-size: 22px;
+            }
+            
+            .proof {
+                font-size: 36px;
+            }
+            
+            .tagline {
+                font-size: 20px;
+            }
+            
+            .opening {
+                font-size: 18px;
+            }
+            
+            .email-signup {
+                padding: 40px 20px;
+            }
+            
+            .email-signup h2 {
+                font-size: 28px;
+            }
+            
+            .story-box {
+                padding: 25px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="hero">
+            <div class="quote">"You'll never make a dime as a screenwriter..."</div>
+            <div class="proof">$2.5 BILLION LATER</div>
+            <div class="tagline">But here's the truth. That exec wasn't wrong about me.<br><strong>My career was dead in the water. I just didn't know it.</strong></div>
+        </div>
+        
+        <div class="main-content">
+            <div class="opening">
+                I had talent. But I was churning out pages in a vacuum. Too dependent on inspiration. Clinging to scenes I wasn't brave enough to cut. Jumping into drafts because an idea felt "so good it would write itself"—then stalling out by page 30.
+            </div>
+            
+            <div class="opening">
+                <strong>I needed someone who could see what I couldn't.</strong>
+            </div>
+            
+            <div class="section">
+                <p>That's when I met Sheffield.</p>
+                
+                <div class="story-box">
+                    <h3>The Mentor Who Changed Everything</h3>
+                    <p>David Sheffield cut his teeth writing with Eddie Murphy on <em>Saturday Night Live</em>. He went on to write <em>Coming to America</em>, one of the biggest comedy hits of all time.</p>
+                    
+                    <p>When he read my early scripts, he didn't blow smoke. He said: <em>"You're funny. But you're all over the map. You need to start acting like a pro."</em></p>
+                    
+                    <p>Then he showed me something I'd never seen before: <strong>how to diagnose what was really wrong with a script—and fix it from the foundation up.</strong></p>
+                    
+                    <p>Not with formulas. Not with beat sheets.</p>
+                    
+                    <p>With the same instincts he'd used to help make Eddie Murphy a star. The same eye he brought to scripts that studios paid millions for.</p>
+                </div>
+                
+                <div class="mentor-reveal">
+                    <p><strong>That mentorship changed my life.</strong></p>
+                    <p>Within a few years, I went from struggling to write anything that worked to landing my first studio deal. Then <em>Rugrats</em>. Then <em>Jimmy Neutron</em>. Then <em>Shrek 2</em>.</p>
+                    <p>Not because I was special. Because <strong>someone showed me what I couldn't see on my own.</strong></p>
+                </div>
+                
+                <div class="credentials">
+                    <h3>J. David Stem</h3>
+                    <p>20+ years as a professional screenwriter for Disney, DreamWorks, Paramount, and Nickelodeon</p>
+                    <p><em>Shrek 2, Jimmy Neutron, Rugrats, The Smurfs, Disenchanted, Are We There Yet?, Mission Hill</em></p>
+                    <p class="numbers">$2.5 Billion in Worldwide Box Office | Emmy Nomination | Cable Ace Award</p>
+                </div>
+            </div>
+            
+            <div class="divider">⸻</div>
+            
+            <div class="section">
+                <p style="font-size: 18px; font-weight: 600; text-align: center; margin-bottom: 25px;">Here's what I learned from Sheffield—and what I want to pass on to you:</p>
+                
+                <p>Most writers are trying to fix their scripts with more rewrites. They hand pages to friends, their mom, their writing group—people who mean well but have never written anything that's made $2.5 billion.</p>
+                
+                <p>They get vague notes like "I love it!" or "Maybe the middle drags?" So they rewrite. And rewrite. And nothing fundamentally changes.</p>
+                
+                <p><strong>Because they're treating the symptoms, not the disease.</strong></p>
+                
+                <div class="highlight-box">
+                    <p>What you need isn't another rewrite. What you need is someone who can see what you're actually writing about—and help you build everything around that.</p>
+                </div>
+                
+                <p>That script you've been wrestling with? There's gold in there. I promise you. You felt it when the idea first hit you—that electricity, that certainty.</p>
+                
+                <p>But somewhere between that first flash and page 90, it got buried. <strong>Not because you're not talented. Because you're standing too close to see it.</strong></p>
+                
+                <p style="font-size: 18px; font-weight: 600; margin-top: 30px;">That's what Sheffield gave me: the ability to step back and see the story that was trying to get out all along.</p>
+                
+                <p style="font-size: 18px; font-weight: 600;">And that's exactly what I'm offering you.</p>
+            </div>
+            
+            <div class="divider">⸻</div>
+            
+            <div class="what-you-get">
+                <h2>Inside The Writer's Forge</h2>
+                <p class="subtitle">Real mentorship. Real training. Real transformation.</p>
+                
+                <div class="benefit-item">
+                    <h3>The Hot Seat: Learn to See What You Can't</h3>
+                    <p>Bring your script. Sit in the hot seat while I diagnose what's really going on—the way Sheffield did for me. Then watch as I show you how to do it yourself.</p>
+                </div>
+                
+                <div class="benefit-item">
+                    <h3>The 10 Iron-Clad Rules for a Writing Life</h3>
+                    <p>The foundation Sheffield taught me—discipline, process, and the mental game of being a professional. These aren't tips. They're the rules I've lived by for 20+ years.</p>
+                </div>
+                
+                <div class="benefit-item">
+                    <h3>Weekly Training That Builds Your Instincts</h3>
+                    <p>Not formulas. Not templates. Assignments that teach you to diagnose like a pro—so you develop the same instincts Sheffield passed on to me.</p>
+                </div>
+                
+                <div class="benefit-item">
+                    <h3>A Community That Tells the Truth</h3>
+                    <p>No more notes from people who "loved it." Learn alongside writers who are developing the same diagnostic skills—and who genuinely want you to succeed.</p>
+                </div>
+                
+                <div class="benefit-item">
+                    <h3>Direct Access to Me</h3>
+                    <p>Office hours. Script reviews. Q&A. I show up the way Sheffield showed up for me—because real mentorship can't happen from behind a paywall.</p>
+                </div>
+            </div>
+            
+            <div class="section" style="text-align: center;">
+                <p style="font-size: 19px; font-weight: 600; margin-bottom: 20px;">This isn't another screenwriting course where you learn structure and hope it clicks.</p>
+                
+                <p style="font-size: 19px; line-height: 1.7;">This is <strong>mentorship</strong>—the kind that changed my career, passed down from someone who learned it from the best.</p>
+                
+                <p style="font-size: 21px; font-weight: 700; color: #ff6b35; margin-top: 30px; line-height: 1.5;">The knowledge works. Not because I'm special.<br>Because anyone who applies it can transform their writing.</p>
+            </div>
+            
+            <div class="divider">⸻</div>
+            
+            <div class="testimonials">
+                <h2>Writers I've Mentored Over the Years</h2>
+                
+                <div class="testimonial">
+                    <div class="testimonial-text">
+                        "I'd been rewriting the same script for two years. After one session with J. David, I finally saw what I was actually trying to say. I rewrote the entire thing in three weeks—and it's the best thing I've ever written."
+                    </div>
+                    <div class="testimonial-author">— Sarah M.</div>
+                    <div class="testimonial-context">Drama Writer, Los Angeles</div>
+                </div>
+                
+                <div class="testimonial">
+                    <div class="testimonial-text">
+                        "Working with J. David changed everything for me. I went from writing when 'inspired' to writing every day. I finished three scripts in six months—more than I wrote in the previous three years combined."
+                    </div>
+                    <div class="testimonial-author">— Marcus T.</div>
+                    <div class="testimonial-context">Comedy Writer, New York</div>
+                </div>
+                
+                <div class="testimonial">
+                    <div class="testimonial-text">
+                        "J. David sees things in my scripts I could never see on my own. And he taught me how to see them too. That skill is something I use on every project now."
+                    </div>
+                    <div class="testimonial-author">— Jennifer L.</div>
+                    <div class="testimonial-context">Feature Writer, Atlanta</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="email-signup">
+            <h2>Ready to Find Your Mentor?</h2>
+            <p class="subheading">Your first month is completely free.</p>
+            <p>No credit card. No catch. Just the chance to experience real mentorship—the kind that can change your entire trajectory as a writer.</p>
+            <p>Enter your email and I'll send you immediate access to The Writer's Forge community.</p>
+            
+            <form class="email-form" action="https://skool.us5.list-manage.com/subscribe/post?u=1a123613225facde716a78753&amp;id=132c1922ef&amp;f_id=009bf3e0f0" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form">
+                <input type="email" name="EMAIL" id="mce-EMAIL" placeholder="Enter your email address" required>
+                <div aria-hidden="true" style="position: absolute; left: -5000px;">
+                    <input type="text" name="b_1a123613225facde716a78753_132c1922ef" tabindex="-1" value="">
+                </div>
+                <button type="submit" class="cta-button" name="subscribe" id="mc-embedded-subscribe">Join The Forge Free</button>
+            </form>
+            
+            <div class="alt-link">
+                <p>Or visit The Writer's Forge directly:</p>
+                <a href="https://www.skool.com/the-writers-forge/about">Go to The Forge →</a>
+            </div>
+            
+            <div class="guarantee">
+                <strong>Founding members lock in at a rate that will never be offered again.</strong><br><br>
+                If after 30 days you don't feel like you're finally seeing your work clearly—like you've found the mentor you've been looking for—then this isn't for you, and may the wind be at your back.<br><br>
+                <strong>This is for writers who are ready to stop going it alone and start learning from someone who's been exactly where you are.</strong>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
